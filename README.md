@@ -43,13 +43,13 @@ El reporte de cobertura queda en `target/site/jacoco/index.html`.
 
 | Prueba | Captura |
 |---|---|
-| Parte 1: 3 pruebas unitarias en verde | ![Parte 1](docs/capturas/01-tests-parte1.png) |
-| Parte 2: 6 pruebas tras el refactor DIP | ![Refactor](docs/capturas/02-tests-refactor-dip.png) |
-| `mvn verify` con integración | ![Integración](docs/capturas/03-tests-integracion.png) |
-| Cobertura JaCoCo | ![Cobertura](docs/capturas/04-cobertura-jacoco.png) |
-| Pipeline de GitHub Actions | ![Actions](docs/capturas/05-github-actions.png) |
+| Parte 1: 3 pruebas unitarias en verde | ![Parte 1](<img width="1920" height="1032" alt="image" src="https://github.com/user-attachments/assets/b127810d-9557-4739-9b84-06b58c3ee0e4" />) |
+| Parte 2: 6 pruebas tras el refactor DIP | ![Refactor](<img width="1920" height="1032" alt="image" src="https://github.com/user-attachments/assets/943764f6-3455-4c8b-81c8-c3af025a8db3" />) |
+| `mvn verify` con integración | ![Integración](<img width="1920" height="1032" alt="image" src="https://github.com/user-attachments/assets/8fe291bc-e1da-4f38-bd8c-53b0e33ac56a" />) |
+| Cobertura JaCoCo | ![Cobertura](<img width="1920" height="1032" alt="image" src="https://github.com/user-attachments/assets/6dd25a52-5cc3-4695-8fb4-cf03df577e56" />) |
+| Pipeline de GitHub Actions | ![Actions](<img width="1920" height="1032" alt="image" src="https://github.com/user-attachments/assets/fd58bf5f-6429-43ba-9a8e-79d57d7050ad" />) |
 
-Cobertura de instrucciones del proyecto: **[...]%**. El número total de pruebas es **[...]**.
+Cobertura de instrucciones del proyecto: **81%**. El número total de pruebas es **9**.
 
 ## Decisiones de diseño
 
