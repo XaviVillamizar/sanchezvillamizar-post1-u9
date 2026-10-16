@@ -5,6 +5,8 @@ import com.clinica.recordatorios.channel.ReminderChannelFactory;
 import com.clinica.recordatorios.domain.Cita;
 import com.clinica.recordatorios.repository.CitaRepository;
 import org.springframework.stereotype.Service;
+import com.clinica.recordatorios.channel.SmsReminderChannel;
+import com.clinica.recordatorios.channel.gateway.TwilioNotificadorSmsGateway;
 
 import java.time.Clock;
 import java.time.LocalDateTime;
@@ -40,6 +42,18 @@ public class CitaReminderServiceImpl implements CitaReminderService {
             citaRepository.save(cita);
         }
         return citasPorNotificar.size();
+    }
+
+        @Override
+    public void enviarRecordatorioUrgente(Long citaId) {
+        Cita cita = citaRepository.findById(citaId)
+                .orElseThrow(() -> new CitaNoEncontradaException(citaId));
+
+        ReminderChannel canalUrgente = new SmsReminderChannel(new TwilioNotificadorSmsGateway());
+        canalUrgente.enviar(cita, "URGENTE: su cita es en menos de 2 horas y no ha sido confirmada");
+
+        cita.setRecordatorioEnviado(true);
+        citaRepository.save(cita);
     }
 
     private String construirMensaje(Cita cita) {
